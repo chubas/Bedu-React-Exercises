@@ -1,33 +1,42 @@
-import React, { Fragment } from "react"
-import { BrowserRouter as Router, Route, useParams } from "react-router-dom"
-import Home from './Home'
-import Courses from './Courses'
+import React from "react"
+// import "./styles.css";
+import { Tabs, Tab } from './util/Tabs'
+import Students from './sesion3/Students'
+import StateTimer from './sesion4/StateTimer'
+import HooksTimer from './sesion5/HooksTimer'
+import RoutedApp from "./sesion6/RoutedApp"
 
+/*
+ * App Component
+ * Este es nuestro componente principal, que consiste en Tabs (hechos con hooks y styled components)
+ * Cada uno de los componentes contiene los ejercicios hechos en clase
+ */
 const App = () => {
   return (
-    <Router>
-      <Fragment>
-        <div className="nav">
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/courses/">Courses</a>
-            </li>
-          </ul>
-        </div>
-        <div className="main">
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/courses/">
-            <Courses />
-          </Route>
-        </div>
-      </Fragment>
-    </Router>
-  )
-};
+    <div className="App">
+      <Tabs>
+        <Tab title="Componentes de Clase">
+          <Students></Students>
+        </Tab>
+        <Tab title="Timer (estado)">
+          <StateTimer></StateTimer>
+        </Tab>
+        <Tab title="Timer (hooks)">
+          <HooksTimer></HooksTimer>
+        </Tab>
+        <Tab title="Router 1">
+          <RoutedApp></RoutedApp>
+        </Tab>
+        <Tab title="Tab4">
+          Tab4
+        </Tab>
+      </Tabs>
+    </div>
 
-export default App;
+  )
+
+}
+
+
+
+export default App

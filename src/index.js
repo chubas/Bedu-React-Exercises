@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Timer from "./Timer";
 import App from "./App"
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { QueryParamProvider } from "use-query-params";
+
 
 ReactDOM.render(
-    <App />,
+    <Router>
+        <QueryParamProvider ReactRouterRoute={ Route }>
+            <App />
+        </QueryParamProvider>
+    </Router>,
     document.getElementById("root")
 );
