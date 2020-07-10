@@ -4,7 +4,10 @@ import { Tabs, Tab } from './util/Tabs'
 import Students from './sesion3/Students'
 import StateTimer from './sesion4/StateTimer'
 import HooksTimer from './sesion5/HooksTimer'
-import RoutedApp from "./sesion6/RoutedApp"
+import RoutedApp from './sesion6/RoutedApp'
+import Greetings from './sesion7/Greet'
+import Fetcher from './sesion8/Fetch'
+import PokemonRouter from "./sesion9/Pokemon"
 
 /*
  * App Component
@@ -16,27 +19,29 @@ const App = () => {
     <div className="App">
       <Tabs>
         <Tab title="Componentes de Clase">
-          <Students></Students>
+          <Students />
         </Tab>
         <Tab title="Timer (estado)">
-          <StateTimer></StateTimer>
+          <StateTimer />
         </Tab>
         <Tab title="Timer (hooks)">
-          <HooksTimer></HooksTimer>
+          <HooksTimer />
         </Tab>
-        <Tab title="Router 1">
-          <RoutedApp></RoutedApp>
+        <Tab title="Router">
+          <RoutedApp />
         </Tab>
-        <Tab title="Tab4">
-          Tab4
+        <Tab title="Pruebas">
+          <Greetings />
+        </Tab>
+        <Tab title="Fetcher">
+          <Fetcher />
+        </Tab>
+        <Tab title="Pokemon">
+          <PokemonRouter />
         </Tab>
       </Tabs>
     </div>
-
   )
-
 }
-
-
 
 export default App

@@ -8,34 +8,25 @@ const Timer = () => {
   const [active, setActive] = useState(false)
   const useTimer = () => {   
     useEffect(() => {
-      let interval = null;
+      let interval ;
       if (active) {
         interval = setInterval(() => {
-          const seconds = time.seconds;
-          const minutes = time.minutes;
-          if (seconds < 59) {
-            setTime({
-              seconds: seconds + 1,
-              minutes: minutes
-            })
-          } else {
-            setTime({
-              seconds: 0,
-              minutes: minutes + 1
-            })
-          }
+          setTime({
+            seconds: time.seconds < 59 ? time.seconds + 1 : 0,
+            minutes: time.seconds < 59 ? time.minutes : time.minutes + 1
+          })
         }, 1000)
       } else {
-        clearInterval(null)
         setTime({
           seconds: 0,
           minutes: 0
         })
+        clearInterval(interval)
       }
       return () => {
         clearInterval(interval)
       }
-    }, [active, time.seconds, time.minutes])
+    }, [active, time.minutes, time.seconds])
     return time;
   }
   const timer = useTimer()
@@ -47,15 +38,16 @@ const Timer = () => {
   }
   return (
     <div>
-    <div>
-    <span className="minutes">{ timer.minutes }</span>:
-    <span className="seconds">{ timer.seconds }</span>
+      <div>
+        <span className="minutes">{ timer.minutes }</span>:
+        <span className="seconds">{ timer.seconds }</span>
+      </div>
+      <div>
+        <button onClick={start}>Start</button>
+        <button onClick={stop}>Stop</button>
+      </div>
     </div>
-    <div>
-    <button onClick={start}>Start</button>
-    <button onClick={stop}>Stop</button>
-    </div>
-    </div>
-    )
-  }
-  export default Timer
+  )
+}
+
+export default Timer
