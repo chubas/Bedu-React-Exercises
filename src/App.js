@@ -8,6 +8,7 @@ import RoutedApp from './sesion6/RoutedApp'
 import Greetings from './sesion7/Greet'
 import Fetcher from './sesion8/Fetch'
 import PokemonRouter from "./sesion9/Pokemon"
+import Actors from './sesionExtra/Actors'
 
 /*
  * App Component
@@ -33,11 +34,14 @@ const App = () => {
         <Tab title="Pruebas">
           <Greetings />
         </Tab>
-        <Tab title="Fetcher">
+        <Tab title="Fetch">
           <Fetcher />
         </Tab>
         <Tab title="Pokemon">
           <PokemonRouter />
+        </Tab>
+        <Tab title="GraphQL">
+          <Actors />
         </Tab>
       </Tabs>
     </div>
