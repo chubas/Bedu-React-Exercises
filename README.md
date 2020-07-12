@@ -1,4 +1,6 @@
-# Instrucciones
+# Ejercicios de Frontend con React
 
-- Inicializar una aplicación de React con `create-react-app`
-- Limpiar el código para que el componente `App` solo muestre un `Hola Mundo`
+Este repositorio contiene ejercicios vistos en clase de Frontend con React, organizados dentro de
+tabs en la página principal.
+El código fuente viene con documentación sobre varios de estos conceptos y explicando su
+funcionamiento.
