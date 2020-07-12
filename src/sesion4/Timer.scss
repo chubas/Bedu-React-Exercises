@@ -1,0 +1,10 @@
+.timer {
+  font-family: 'Monaco', 'Roboto Mono', 'Courier New', Courier, monospace;
+  padding: 10px;
+  font-size: 3em;
+  color: #000;
+  .minutes, .seconds {
+    padding: 10px;
+    font-weight: bold;
+  } 
+}

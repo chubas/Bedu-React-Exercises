@@ -1,0 +1,20 @@
+{
+  "frontend": {
+    "name": "Frontend en NodeJS",
+    "description": "React y JSX para hacer aplicaciones dinámicas",
+    "hours": "Martes y Jueves 7 - 10",
+    "teacher": "Rubén"
+  },
+  "backend": {
+    "name": "Backend en NodeJS",
+    "description": "Aplicaciones backend usando Express y GraphQL",
+    "hours": "Lunes y Miércoles 7 - 10",
+    "teacher": "Bryan"
+  },
+  "python": {
+    "name": "Python y Computer Vision",
+    "description": "Python y OpenCV para análisis de imágenes y gráficos",
+    "hours": "Sábados 9 - 3",
+    "teacher": "Luis"
+  }
+}

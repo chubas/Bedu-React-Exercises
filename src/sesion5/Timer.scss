@@ -1,0 +1,14 @@
+@import '../sesion4/Timer.scss';
+
+.timer.inactive {
+  color: #AAA;
+}
+
+.timer-controls {
+  padding: 20px;
+  button {
+    margin: 0 10px;
+    padding: 8px;
+    font-size: 1.3em;
+  }
+}

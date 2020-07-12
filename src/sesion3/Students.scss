@@ -1,0 +1,10 @@
+.student-card {
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid black;
+  .name {
+    font-size: 1.5empx;
+    font-weight: bold;
+  }
+}

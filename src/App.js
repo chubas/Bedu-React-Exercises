@@ -1,5 +1,4 @@
-import React from "react"
-// import "./styles.css";
+import React from  'react'
 import { Tabs, Tab } from './util/Tabs'
 import Students from './sesion3/Students'
 import StateTimer from './sesion4/StateTimer'
@@ -7,7 +6,7 @@ import HooksTimer from './sesion5/HooksTimer'
 import RoutedApp from './sesion6/RoutedApp'
 import Greetings from './sesion7/Greet'
 import Fetcher from './sesion8/Fetch'
-import PokemonRouter from "./sesion9/Pokemon"
+import PokemonRouter from  './sesion9/Pokemon'
 import Actors from './sesionExtra/Actors'
 
 /*

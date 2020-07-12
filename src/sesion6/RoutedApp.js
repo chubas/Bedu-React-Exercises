@@ -1,6 +1,10 @@
 import React, { Fragment } from "react"
-import { BrowserRouter as Router, Route, useParams } from "react-router-dom"
+import { BrowserRouter as Router, Route, useParams, Switch } from "react-router-dom"
+// Normalmente, importaríamos `Link` de "react-router-dom". Para este ejercicio se usará una versión
+// modificada para poder usarse con los Tabs
 import Link from '../util/Link'
+
+import './RoutedApp.scss'
 
 const Home = () => (
   <Fragment>
@@ -8,38 +12,25 @@ const Home = () => (
     <p>Hola mundo!</p>
   </Fragment>
 )
-const courses = {
-  frontend: {
-    name: "Curso de frontend",
-    description: "Aprenderemos React y JSX para hacer aplicaciones dinámicas",
-    hours: "Martes y Jueves 7 - 10",
-    teacher: "Rubén"
-  },
-  backend: {
-    name: "Backend en nodejs",
-    description: "Veremos Express y GraphQL",
-    hours: "Lunes y Miércoles 7 - 10",
-    teacher: "Bryan"
-  },
-  python: {
-    name: "Python y computer vision",
-    description: "Usaremos python y opencv",
-    hours: "Sábados 9 - 3",
-    teacher: "Luis"
-  }
-}
+
+// Usualmente estos datos vienen de un API, por ahora los importaremos de un JSON file
+const courses = require('./courses.json')
+
 const Course = () => {
   const { course } = useParams()
   return (
-    <Fragment>
-      <h1>{ courses[course].name }</h1>
+    <div className="course">
+      <h2>{ courses[course].name }</h2>
       <p>{ courses[course].description }</p>
-      <p>Horas: { courses[course].hours }</p>
-      <p>Imparte: { courses[course].teacher }</p>
-    </Fragment>
+      <p><span>Horas:</span>{ courses[course].hours }</p>
+      <p><span>Imparte:</span>{ courses[course].teacher }</p>
+    </div>
   )
 }
 const About = () => {
+  // Para cada uno de nuestros cursos, creamos un elemento en la lista con un link al detalle
+  // del curso. Observa cómo pasamos el parámetro `:course` en la ruta, que se activa en nuestro
+  // router anidado
   return (
     <Router>
       <Fragment>
@@ -62,6 +53,8 @@ const About = () => {
     </Router>
   )
 }
+
+// Este componente recibe un parámetro `name` que obtenemos de la ruta
 const Contact = () => {
   const { name } = useParams()
   return (
@@ -71,7 +64,12 @@ const Contact = () => {
     </Fragment>
   )
 }
-const RoutedApp = (prio) => {
+const RoutedApp = () => {
+
+  // Observa el uso de la propiedad `exact` para el homepage. De no ponerlo, cualquier ruta haría
+  // match con la ruta principal y todas nuestras URLs irían al componente Home
+  // También observa el uso del componente `Switch` para prevenir que otro contenido que sea de tipo
+  // `Route` se imprima en el DOM
   return (
     <Router>
       <Fragment>
@@ -91,15 +89,17 @@ const RoutedApp = (prio) => {
           </ul>
         </div>
         <div className="main">
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about/">
-            <About />
-          </Route>
-          <Route path="/contact/:name">
-            <Contact />
-          </Route>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/about/">
+              <About />
+            </Route>
+            <Route path="/contact/:name">
+              <Contact />
+            </Route>
+          </Switch>
         </div>
       </Fragment>
     </Router>

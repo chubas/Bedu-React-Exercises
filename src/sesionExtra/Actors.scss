@@ -1,0 +1,27 @@
+.actor-card {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  h3 {
+    font-weight: 1.2em;
+    background-color: #EEE;
+    margin: 0;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    color: #333;
+  }
+
+  .film {
+    list-style-type: none;
+    margin-bottom: 5px;
+    .director {
+      font-size: 0.8em;
+      padding-left: 1em;
+      color: #999;
+    }
+  }
+}

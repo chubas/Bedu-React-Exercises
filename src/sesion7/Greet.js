@@ -1,5 +1,11 @@
 import React, { Fragment } from 'react'
 
+/*
+ * Esta es la función principal que tiene la lógica de nuestro componente.
+ * El requerimiento de esta función debe estar bien definido de antemano, y debe de poder ser
+ * comprobable. En TDD, primero escribiremos la prueba que valida que la función cumpla con ese
+ * requerimiento
+ */
 const greet = (param) => {
   if (typeof(param) === 'string') {
     return `Hola ${param}!`
@@ -18,15 +24,18 @@ const greet = (param) => {
   }
 }
 
+/*
+ * Esta es una diferente implementación de la misma función (que usa `slice` en vez de iterar por
+ * los elementos). Para probar que cambiar la función no cambia el resultado, debemos de verificar
+ * que las pruebas siguen pasando. Esto es lo que se conoce como el ciclo: rojo - verde - refactor.
+ */
 const greet2 = (param) => {
-  if (typeof(param) === 'string') {
+  if (typeof param === 'string') {
     return `Hola ${param}!`
+  } else if (param.length > 1) {
+    return `Hola ${param.slice(0, -1).join(', ')} y ${param[param.length - 1]}!`
   } else {
-    if (param.length > 1) {
-      return `Hola ${param.slice(0, -1).join(', ')} y ${param[param.length - 1]}!`
-    } else {
-      return `Hola ${param.join(', ')}!`
-    }
+    return `Hola ${param.join(', ')}!`
   }
 }
 
